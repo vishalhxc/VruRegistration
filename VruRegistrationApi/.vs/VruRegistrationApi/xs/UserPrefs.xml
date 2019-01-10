@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{BE4C6D29-CF89-49F7-B61E-AC024459EFD1}|Default">
+  <MonoDevelop.Ide.ItemProperties.VruRegistrationApi FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VruRegistrationApi/Startup.cs">
+    <Files>
+      <File FileName="VruRegistrationApi/Startup.cs" Line="23" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

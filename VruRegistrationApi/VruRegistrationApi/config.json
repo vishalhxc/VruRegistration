@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "VruRegistrationConnectionString": "server=127.0.0.1,1433;Database=VruRegistrationDb;User Id=SA;Password=PorkStuffing2;MultipleActiveResultSets=true;"
+  }
+}

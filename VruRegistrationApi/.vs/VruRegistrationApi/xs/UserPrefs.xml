@@ -1,8 +1,21 @@
 ﻿<Properties StartupConfiguration="{BE4C6D29-CF89-49F7-B61E-AC024459EFD1}|Default">
-  <MonoDevelop.Ide.ItemProperties.VruRegistrationApi FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VruRegistrationApi/Startup.cs">
+  <MonoDevelop.Ide.ItemProperties.VruRegistrationApi PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VruRegistrationApi/Data/Migrations/20190110214833_UpdateForeignKeyNames.cs">
     <Files>
-      <File FileName="VruRegistrationApi/Startup.cs" Line="23" Column="37" />
+      <File FileName="VruRegistrationApi/Startup.cs" Line="34" Column="30" />
+      <File FileName="VruRegistrationApi/Program.cs" Line="1" Column="1" />
+      <File FileName="VruRegistrationApi/config.json" Line="3" Column="37" />
+      <File FileName="VruRegistrationApi/Controllers/StudentController.cs" Line="10" Column="1" />
+      <File FileName="VruRegistrationApi/Models/Student.cs" Line="23" Column="48" />
+      <File FileName="VruRegistrationApi/Models/Course.cs" Line="40" Column="1" />
+      <File FileName="VruRegistrationApi/Models/Enrollment.cs" Line="17" Column="1" />
+      <File FileName="VruRegistrationApi/Models/Instructor.cs" Line="30" Column="1" />
+      <File FileName="VruRegistrationApi/Models/Semester.cs" Line="20" Column="6" />
+      <File FileName="VruRegistrationApi/Data/VruRegistrationDbContext.cs" Line="18" Column="2" />
+      <File FileName="VruRegistrationApi/Data/Migrations/20190110210718_AddScheduleToCourse.cs" Line="1" Column="1" />
+      <File FileName="VruRegistrationApi/Data/IVruRegistrationRepository.cs" Line="15" Column="40" />
+      <File FileName="VruRegistrationApi/Data/VruRegistrationRepository.cs" Line="31" Column="9" />
+      <File FileName="VruRegistrationApi/Data/Migrations/20190110214833_UpdateForeignKeyNames.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

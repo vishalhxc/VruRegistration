@@ -1,0 +1,14 @@
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/bin/Debug/netcoreapp2.1/VruRegistrationApi.deps.json
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/bin/Debug/netcoreapp2.1/VruRegistrationApi.runtimeconfig.json
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/bin/Debug/netcoreapp2.1/VruRegistrationApi.runtimeconfig.dev.json
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/bin/Debug/netcoreapp2.1/VruRegistrationApi.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/bin/Debug/netcoreapp2.1/VruRegistrationApi.pdb
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.csproj.CoreCompileInputs.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.RazorAssemblyInfo.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.RazorAssemblyInfo.cs
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.AssemblyInfoInputs.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.AssemblyInfo.cs
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.RazorTargetAssemblyInfo.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.pdb
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/obj/Debug/netcoreapp2.1/VruRegistrationApi.csprojAssemblyReference.cache

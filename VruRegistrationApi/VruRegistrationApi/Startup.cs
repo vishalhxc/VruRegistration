@@ -24,6 +24,7 @@ namespace VruRegistrationApi
             {
                 config.UseSqlServer(_config.GetConnectionString("VruRegistrationConnectionString"));
             });
+            services.AddScoped<IVruRegistrationRepository, VruRegistrationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

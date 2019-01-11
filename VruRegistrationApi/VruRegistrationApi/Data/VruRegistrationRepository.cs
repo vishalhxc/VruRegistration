@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using VruRegistrationApi.Models;
 
 namespace VruRegistrationApi.Data
@@ -34,35 +36,38 @@ namespace VruRegistrationApi.Data
             _context.Students.Remove(student);
         }
 
-        public IEnumerable<Enrollment> GetAllCoursesForStudent(Student student)
+        public async Task<IEnumerable<Enrollment>> GetAllCoursesForStudent(Student student)
         {
-            return _context.Enrollments
+            var result = await _context.Enrollments
                 .Where(enr => enr.Student == student)
-                .ToList();
+                .ToListAsync();
+            return result.OrderBy(x => x.Id);
         }
 
-        public IEnumerable<Student> GetAllStudents()
+        public async Task<IEnumerable<Student>> GetAllStudents()
         {
-            return _context.Students;
+            var result = await _context.Students.ToListAsync();
+            return result.OrderBy(x => x.Id);
         }
 
-        public Course GetCourse(int courseId)
+        public async Task<Course> GetCourse(int courseId)
         {
-            return _context.Courses
+            return await _context.Courses
                 .Where(c => c.ID == courseId)
-                .First();
+                .FirstAsync();
         }
 
-        public Student GetStudent(int studentId)
+        public async Task<Student> GetStudent(int studentId)
         {
-            return _context.Students
+            var result= await _context.Students
                 .Where(s => s.Id == studentId)
-                .First();
+                .FirstAsync();
+            return result;
         }
 
-        public bool SaveAll()
+        public async Task<bool> SaveAll()
         {
-            return _context.SaveChanges() > 0;
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public void UpdateCourse(Course course)

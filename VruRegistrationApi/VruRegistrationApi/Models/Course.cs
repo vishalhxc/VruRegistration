@@ -6,7 +6,7 @@ namespace VruRegistrationApi.Models
     public class Course
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100)]

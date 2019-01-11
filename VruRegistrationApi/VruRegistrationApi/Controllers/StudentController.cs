@@ -36,6 +36,14 @@ namespace VruRegistrationApi.Controllers
             return Ok(student);
         }
 
+        [HttpGet("{studentId}/course")]
+        public IActionResult GetEnrollments(int studentId)
+        {
+
+            var result =  _repository.GetCoursesByStudent(studentId);
+            return (Ok(result));
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostStudent(Student student)
         {

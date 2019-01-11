@@ -16,7 +16,7 @@ namespace VruRegistrationApi.Data
             _context = context;
         }
 
-        public void AddCourse(Course course)
+        public void AddEnrollment(Course course)
         {
             _context.Courses.Add(course);
         }
@@ -36,12 +36,14 @@ namespace VruRegistrationApi.Data
             _context.Students.Remove(student);
         }
 
-        public async Task<IEnumerable<Enrollment>> GetAllCoursesForStudent(Student student)
+        public IEnumerable<Course> GetCoursesByStudent(int studentId)
         {
-            var result = await _context.Enrollments
-                .Where(enr => enr.Student == student)
-                .ToListAsync();
-            return result.OrderBy(x => x.Id);
+            var enrollments = (from e in _context.Enrollments
+                                     join c in _context.Courses on e.Id equals c.Id
+                                     where e.Student.Id == studentId
+                                     select c)
+                                     .ToList();
+            return enrollments;
         }
 
         public async Task<IEnumerable<Student>> GetAllStudents()
@@ -50,10 +52,10 @@ namespace VruRegistrationApi.Data
             return result.OrderBy(x => x.Id);
         }
 
-        public async Task<Course> GetCourse(int courseId)
+        public async Task<Enrollment> GetEnrollment(int courseId, int studentId)
         {
-            var result = await _context.Courses
-                .Where(c => c.ID == courseId)
+            var result = await _context.Enrollments
+                .Where(c => c.Course.Id == courseId && c.Student.Id == studentId)
                 .ToListAsync();
 
             if (result.Count > 0)

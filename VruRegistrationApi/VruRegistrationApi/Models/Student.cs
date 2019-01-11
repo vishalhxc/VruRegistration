@@ -8,18 +8,18 @@ namespace VruRegistrationApi.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "FirstName is required.")]
+        [StringLength(50, ErrorMessage = "FirstName is limited to 50 characters.")]
         public string FirstName { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "LastName is required.")]
+        [StringLength(50, ErrorMessage = "LastName is limited to 50 characters.")]
         public string LastName { get; set; }
 
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "MiddleName is limited to 50 characters.")]
         public string MiddleName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "BirthDate must be a valid date.")]
         public DateTime BirthDate { get; set; }
     }
 }

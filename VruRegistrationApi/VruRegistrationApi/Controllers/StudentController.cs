@@ -28,7 +28,68 @@ namespace VruRegistrationApi.Controllers
         public async Task<IActionResult> GetStudent(int id)
         {
             var student = await _repository.GetStudent(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+
             return Ok(student);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostStudent(Student student)
+        {
+            _repository.AddStudent(student);
+            await _repository.SaveAll();
+            return CreatedAtAction("GetStudent", new { id = student.Id }, student);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutStudent(int id, Student student)
+        {
+            if (id != student.Id)
+            {
+                return BadRequest(new { Id = "Id is required and must match request body." });
+            }
+
+            if (_repository.UpdateStudent(student) == false)
+            {
+                return NotFound();
+            }
+
+            await _repository.SaveAll();
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchStudent(int id, Student student)
+        {
+            if (id != student.Id)
+            {
+                return BadRequest(new { Id = "Id is required and must match request body." });
+            }
+
+            if (_repository.UpdateStudent(student) == false)
+            {
+                return NotFound();
+            }
+
+            await _repository.SaveAll();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Student>> DeleteStudent(int id)
+        {
+            var student = await _repository.GetStudent(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteStudent(student);
+            await _repository.SaveAll();
+            return student;
         }
     }
 }

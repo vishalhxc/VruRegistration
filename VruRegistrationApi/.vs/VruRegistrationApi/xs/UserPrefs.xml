@@ -1,19 +1,18 @@
 ﻿<Properties StartupConfiguration="{BE4C6D29-CF89-49F7-B61E-AC024459EFD1}|Default">
   <MonoDevelop.Ide.ItemProperties.VruRegistrationApi PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VruRegistrationApi/Data/VruRegistrationRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VruRegistrationApi/Controllers/StudentController.cs">
     <Files>
-      <File FileName="VruRegistrationApi/Data/VruRegistrationRepository.cs" Line="49" Column="1" />
-      <File FileName="VruRegistrationApi/Controllers/StudentController.cs" Line="23" Column="1" />
-      <File FileName="VruRegistrationApi/Startup.cs" Line="27" Column="89" />
-      <File FileName="VruRegistrationApi/Data/IVruRegistrationRepository.cs" Line="21" Column="2" />
-      <File FileName="VruRegistrationApi/Models/Student.cs" Line="9" Column="1" />
+      <File FileName="VruRegistrationApi/Controllers/StudentController.cs" Line="55" Column="36" />
+      <File FileName="VruRegistrationApi/Data/VruRegistrationRepository.cs" Line="66" Column="14" />
+      <File FileName="VruRegistrationApi/Data/IVruRegistrationRepository.cs" Line="13" Column="14" />
+      <File FileName="VruRegistrationApi/Models/Student.cs" Line="26" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/Controllers/StudentController.cs" relfile="VruRegistrationApi/Controllers/StudentController.cs" line="23" column="1" />
+      <Breakpoint file="/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi/Controllers/StudentController.cs" relfile="VruRegistrationApi/Controllers/StudentController.cs" line="30" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

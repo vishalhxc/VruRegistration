@@ -52,17 +52,34 @@ namespace VruRegistrationApi.Data
 
         public async Task<Course> GetCourse(int courseId)
         {
-            return await _context.Courses
+            var result = await _context.Courses
                 .Where(c => c.ID == courseId)
-                .FirstAsync();
+                .ToListAsync();
+
+            if (result.Count > 0)
+            {
+                return result.First();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public async Task<Student> GetStudent(int studentId)
         {
-            var result= await _context.Students
+            var result = await _context.Students
                 .Where(s => s.Id == studentId)
-                .FirstAsync();
-            return result;
+                .ToListAsync();
+
+            if (result.Count > 0)
+            {
+                return result.First();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public async Task<bool> SaveAll()
@@ -70,14 +87,30 @@ namespace VruRegistrationApi.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public void UpdateCourse(Course course)
+        public bool UpdateCourse(Course course)
         {
-            _context.Courses.Update(course);
+            try
+            {
+                _context.Courses.Update(course);
+                return true;
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return false;
+            }
         }
 
-        public void UpdateStudent(Student student)
+        public bool UpdateStudent(Student student)
         {
-            _context.Students.Update(student);
+            try
+            {
+                _context.Students.Update(student);
+                return true;
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return false;
+            }
         }
     }
 }

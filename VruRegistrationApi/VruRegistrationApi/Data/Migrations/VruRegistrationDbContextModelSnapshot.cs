@@ -21,7 +21,7 @@ namespace VruRegistrationApi.Migrations
 
             modelBuilder.Entity("VruRegistrationApi.Models.Course", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -31,9 +31,12 @@ namespace VruRegistrationApi.Migrations
                         .IsRequired()
                         .HasMaxLength(1000);
 
+                    b.Property<DateTime>("EndDate");
+
                     b.Property<TimeSpan>("EndTime");
 
-                    b.Property<int>("InstructorId");
+                    b.Property<string>("InstructorName")
+                        .IsRequired();
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -43,15 +46,11 @@ namespace VruRegistrationApi.Migrations
                         .IsRequired()
                         .HasMaxLength(5);
 
-                    b.Property<int>("SemesterId");
+                    b.Property<DateTime>("StartDate");
 
                     b.Property<TimeSpan>("StartTime");
 
-                    b.HasKey("ID");
-
-                    b.HasIndex("InstructorId");
-
-                    b.HasIndex("SemesterId");
+                    b.HasKey("Id");
 
                     b.ToTable("Courses");
                 });
@@ -62,64 +61,17 @@ namespace VruRegistrationApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CourseID");
+                    b.Property<int>("CourseId");
 
                     b.Property<int>("StudentId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseID");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
 
                     b.ToTable("Enrollments");
-                });
-
-            modelBuilder.Entity("VruRegistrationApi.Models.Instructor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Biography");
-
-                    b.Property<DateTime>("BirthDate");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("MiddleName")
-                        .HasMaxLength(50);
-
-                    b.Property<int>("YearsExperience");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Instructors");
-                });
-
-            modelBuilder.Entity("VruRegistrationApi.Models.Semester", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime>("EndDate");
-
-                    b.Property<DateTime>("StartDate");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Semesters");
                 });
 
             modelBuilder.Entity("VruRegistrationApi.Models.Student", b =>
@@ -146,24 +98,11 @@ namespace VruRegistrationApi.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("VruRegistrationApi.Models.Course", b =>
-                {
-                    b.HasOne("VruRegistrationApi.Models.Instructor", "Instructor")
-                        .WithMany()
-                        .HasForeignKey("InstructorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("VruRegistrationApi.Models.Semester", "Semester")
-                        .WithMany()
-                        .HasForeignKey("SemesterId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("VruRegistrationApi.Models.Enrollment", b =>
                 {
                     b.HasOne("VruRegistrationApi.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("CourseID")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("VruRegistrationApi.Models.Student", "Student")

@@ -11,8 +11,6 @@ namespace VruRegistrationApi.Data
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<Instructor> Instructors { get; set; }
-        public DbSet<Semester> Semesters { get; set; }
         public DbSet<Student> Students { get; set; }
     }
 }

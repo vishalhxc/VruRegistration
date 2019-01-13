@@ -2,18 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.VruRegistrationApi PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="VruRegistrationApi/Models/Course.cs">
     <Files>
-      <File FileName="VruRegistrationApi/Data/VruRegistrationRepository.cs" Line="49" Column="36" NotebookId="1" />
-      <File FileName="VruRegistrationApi/Data/IVruRegistrationRepository.cs" Line="17" Column="58" NotebookId="1" />
-      <File FileName="VruRegistrationApi/Models/Student.cs" Line="26" Column="1" NotebookId="1" />
-      <File FileName="VruRegistrationApi/Controllers/StudentController.cs" Line="43" Column="1" NotebookId="1" />
+      <File FileName="VruRegistrationApi/Data/VruRegistrationRepository.cs" Line="158" Column="1" />
+      <File FileName="VruRegistrationApi/Controllers/StudentController.cs" Line="21" Column="19" />
+      <File FileName="VruRegistrationApi/Data/IVruRegistrationRepository.cs" Line="17" Column="36" />
+      <File FileName="VruRegistrationApi/Startup.cs" Line="24" Column="1" />
+      <File FileName="VruRegistrationApi/Program.cs" Line="11" Column="1" />
+      <File FileName="VruRegistrationApi/Models/Student.cs" Line="26" Column="1" />
+      <File FileName="VruRegistrationApi/Models/Enrollment.cs" Line="14" Column="43" />
+      <File FileName="VruRegistrationApi/Models/Course.cs" Line="8" Column="14" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="275" Y="390" Width="640" Height="842">
-        <Files>
-          <File FileName="VruRegistrationApi/Models/Course.cs" Line="40" Column="1" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

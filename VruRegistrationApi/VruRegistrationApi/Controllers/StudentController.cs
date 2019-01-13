@@ -6,7 +6,7 @@ using VruRegistrationApi.Models;
 
 namespace VruRegistrationApi.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/students")]
     [ApiController]
     public class StudentController : Controller
     {
@@ -17,6 +17,26 @@ namespace VruRegistrationApi.Controllers
             _repository = repository;
         }
 
+        #region Student
+        [HttpPost]
+        public async Task<IActionResult> PostStudent(Student student)
+        {
+            _repository.AddStudent(student);
+            await _repository.SaveAll();
+            return CreatedAtAction("GetStudent", new { studentId = student.Id }, student);
+        }
+
+        [HttpGet("{studentId}")]
+        public async Task<IActionResult> GetStudent(int studentId)
+        {
+            var student = await _repository.GetStudent(studentId);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return Ok(student);
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetStudents()
         {
@@ -24,38 +44,10 @@ namespace VruRegistrationApi.Controllers
             return Ok(students);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetStudent(int id)
+        [HttpPut("{studentId}")]
+        public async Task<IActionResult> PutStudent(int studentId, Student student)
         {
-            var student = await _repository.GetStudent(id);
-            if (student == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(student);
-        }
-
-        [HttpGet("{studentId}/course")]
-        public IActionResult GetEnrollments(int studentId)
-        {
-
-            var result =  _repository.GetCoursesByStudent(studentId);
-            return (Ok(result));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> PostStudent(Student student)
-        {
-            _repository.AddStudent(student);
-            await _repository.SaveAll();
-            return CreatedAtAction("GetStudent", new { id = student.Id }, student);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
-        {
-            if (id != student.Id)
+            if (studentId != student.Id)
             {
                 return BadRequest(new { Id = "Id is required and must match request body." });
             }
@@ -69,10 +61,10 @@ namespace VruRegistrationApi.Controllers
             return NoContent();
         }
 
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> PatchStudent(int id, Student student)
+        [HttpPatch("{studentId}")]
+        public async Task<IActionResult> PatchStudent(int studentId, Student student)
         {
-            if (id != student.Id)
+            if (studentId != student.Id)
             {
                 return BadRequest(new { Id = "Id is required and must match request body." });
             }
@@ -86,10 +78,10 @@ namespace VruRegistrationApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Student>> DeleteStudent(int id)
+        [HttpDelete("{studentId}")]
+        public async Task<ActionResult<Student>> DeleteStudent(int studentId)
         {
-            var student = await _repository.GetStudent(id);
+            var student = await _repository.GetStudent(studentId);
             if (student == null)
             {
                 return NotFound();
@@ -99,5 +91,42 @@ namespace VruRegistrationApi.Controllers
             await _repository.SaveAll();
             return student;
         }
+        #endregion
+
+        #region Enrollment
+        [HttpPost("{studentId}/courses/{courseId}")]
+        public async Task<IActionResult> PostEnrollment(int studentId, int courseId)
+        {
+            Course course = await _repository.GetCourse(courseId);
+            Student student = await _repository.GetStudent(studentId);
+            if (course == null || student == null)
+            {
+                return NotFound();
+            }
+
+            Enrollment enrollment = new Enrollment
+            {
+                Student = student,
+                Course = course
+            };
+            _repository.AddEnrollment(enrollment);
+            await _repository.SaveAll();
+            return CreatedAtAction("GetEnrollment", new { id = enrollment.Id }, enrollment);
+        }
+
+        [HttpGet("{studentId}/courses/{courseId}")]
+        public async Task<IActionResult> GetEnrollment(int studentId, int courseId)
+        {
+            var result = await _repository.GetCourseEnrollmentForStudent(studentId, courseId);
+            return Ok(result);
+        }
+
+        [HttpGet("{studentId}/courses")]
+        public async Task<IActionResult> GetEnrollments(int studentId)
+        {
+            IEnumerable<Enrollment> result = await _repository.GetAllCourseEnrollmentsForStudent(studentId);
+            return (Ok(result));
+        }
+        #endregion
     }
 }

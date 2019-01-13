@@ -12,11 +12,13 @@ namespace VruRegistrationApi.Data
         bool UpdateStudent(Student student);
         void DeleteStudent(Student student);
 
-        void AddEnrollment(Course course);
-        Task<Enrollment> GetEnrollment(int courseId, int studentId);
-        IEnumerable<Course> GetCoursesByStudent(int studentId);
-        bool UpdateCourse(Course course);
-        void DeleteCourse(Course course);
+        void AddEnrollment(Enrollment enrollment);
+        Task<Enrollment> GetCourseEnrollmentForStudent(int studentId, int courseId);
+        Task<IEnumerable<Enrollment>> GetAllCourseEnrollmentsForStudent(int studentId);
+        bool UpdateEnrollment(Enrollment enrollment);
+        void DeleteEnrollment(Enrollment enrollment);
+
+        Task<Course> GetCourse(int courseId);
 
         Task<bool> SaveAll();
     }

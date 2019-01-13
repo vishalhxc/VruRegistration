@@ -17,10 +17,13 @@ namespace VruRegistrationApi.Models
         public string Description { get; set; }
 
         [Required]
-        public Instructor Instructor { get; set; }
+        public string InstructorName { get; set; }
 
         [Required]
-        public Semester Semester { get; set; }
+        public DateTime StartDate { get; set; }
+
+        [Required]
+        public DateTime EndDate { get; set; }
 
         [Required]
         public TimeSpan StartTime { get; set; }

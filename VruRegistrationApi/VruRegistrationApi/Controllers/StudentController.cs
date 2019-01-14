@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using VruRegistrationApi.Data;
@@ -46,23 +47,6 @@ namespace VruRegistrationApi.Controllers
 
         [HttpPut("{studentId}")]
         public async Task<IActionResult> PutStudent(int studentId, Student student)
-        {
-            if (studentId != student.Id)
-            {
-                return BadRequest(new { Id = "Id is required and must match request body." });
-            }
-
-            if (_repository.UpdateStudent(student) == false)
-            {
-                return NotFound();
-            }
-
-            await _repository.SaveAll();
-            return NoContent();
-        }
-
-        [HttpPatch("{studentId}")]
-        public async Task<IActionResult> PatchStudent(int studentId, Student student)
         {
             if (studentId != student.Id)
             {
@@ -126,6 +110,66 @@ namespace VruRegistrationApi.Controllers
         {
             IEnumerable<Enrollment> result = await _repository.GetAllCourseEnrollmentsForStudent(studentId);
             return (Ok(result));
+        }
+
+        [HttpPut("{studentId}/courses")]
+        public async Task<IActionResult> PutEnrollment(int studentId, EnrollmentDto enrollmentDto)
+        {
+            if (studentId != enrollmentDto.StudentId)
+            {
+                return BadRequest(new { studentId = "Student Id is required and must match request body." });
+            }
+
+            Course course = await _repository.GetCourse(enrollmentDto.CourseId);
+            Student student = await _repository.GetStudent(studentId);
+            if (course == null || student == null)
+            {
+                return NotFound();
+            }
+
+            Enrollment enrollment = new Enrollment
+            {
+                Id = enrollmentDto.EnrollmentId,
+                Student = student,
+                Course = course
+            };
+            _repository.UpdateEnrollment(enrollment);
+            await _repository.SaveAll();
+            return NoContent();
+        }
+
+        [HttpDelete("{studentId}/courses")]
+        public async Task<ActionResult<Enrollment>> DeleteEnrollment(int studentId, EnrollmentDto enrollmentDto)
+        {
+            if (studentId != enrollmentDto.StudentId)
+            {
+                return BadRequest(new { studentId = "Student Id is required and must match request body." });
+            }
+
+            Course course = await _repository.GetCourse(enrollmentDto.CourseId);
+            Student student = await _repository.GetStudent(studentId);
+            if (course == null || student == null)
+            {
+                return NotFound();
+            }
+
+            Enrollment enrollment = new Enrollment
+            {
+                Id = enrollmentDto.EnrollmentId,
+                Student = student,
+                Course = course
+            };
+            try
+            {
+                _repository.DeleteEnrollment(enrollment);
+                await _repository.SaveAll();
+            }
+            catch(Exception)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
         #endregion
     }

@@ -1,0 +1,17 @@
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.Tests.deps.json
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.Tests.runtimeconfig.json
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.Tests.runtimeconfig.dev.json
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.Tests.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.Tests.pdb
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/bin/Debug/netcoreapp2.1/VruRegistrationApi.pdb
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.csprojAssemblyReference.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.csproj.CoreCompileInputs.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.AssemblyInfoInputs.cache
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.AssemblyInfo.cs
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.csproj.CopyComplete
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.dll
+/Users/vishal/Documents/source/repos/VruRegistration/VruRegistrationApi/VruRegistrationApi.Tests/obj/Debug/netcoreapp2.1/VruRegistrationApi.Tests.pdb

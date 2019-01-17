@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "VruRegistrationConnectionString": "server=rdsohmssql.cl4sq3rmguzy.us-east-2.rds.amazonaws.com,1433;Database=VruRegistrationDb;User Id=RdsOhMsSqlAdmin;Password=PorkStuffing2;MultipleActiveResultSets=true;"
+  }
+}

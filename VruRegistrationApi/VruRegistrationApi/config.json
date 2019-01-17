@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "VruRegistrationConnectionString": "server=127.0.0.1,1433;Database=VruRegistrationDb;User Id=SA;Password=PorkStuffing2;MultipleActiveResultSets=true;"
+    "VruRegistrationConnectionString": "server=rdsohmssql.cl4sq3rmguzy.us-east-2.rds.amazonaws.com,1433;Database=VruRegistrationDb;User Id=RdsOhMsSqlAdmin;Password=PorkStuffing2;MultipleActiveResultSets=true;"
   }
 }

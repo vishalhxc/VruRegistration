@@ -148,23 +148,5 @@ namespace VruRegistrationApi.Tests
             // assert
             var result = Assert.IsType<NoContentResult>(putStudent.Result);
         }
-
-        [Fact]
-        public void DeleteStudent()
-        {
-            // arrange
-            Student student = MockData.GetTestStudents(1).First();
-            var mockRepository = new Mock<IVruRegistrationRepository>();
-            mockRepository.Setup(r => r.GetStudent(student.Id))
-                          .ReturnsAsync(student);
-            StudentController studentController = new StudentController(mockRepository.Object);
-
-            // act
-            var deleteStudent = studentController.DeleteStudent(student.Id);
-
-            // assert
-            var result = Assert.IsType<OkObjectResult>(deleteStudent.Result);
-            var value = Assert.IsType<Student>(result.Value);
-        }
     }
 }
